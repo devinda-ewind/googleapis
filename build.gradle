@@ -1,0 +1,8 @@
+apply from: "$rootDir/common-android-library.gradle"
+
+dependencies {
+    implementation AndroidX.appcompat
+    implementation GoogleLibraries.maps
+    implementation GoogleLibraries.place
+    implementation GoogleLibraries.location
+}
