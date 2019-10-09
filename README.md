@@ -6,8 +6,16 @@
   - Google Location
   - Google Place Picker (AutoComplete text View)
 ### Google Place Activity(Extension)
-
- start place picker activity
+**initialize places api in application**
+```kotlin
+class App : Application() {
+    override fun onCreate() {
+        super.onCreate()
+        Places.initialize(applicationContext, getString(R.string.google_map_key))
+    }
+}
+```
+**Start place picker activity**
 ```kotlin
  override fun onClick(v: View?) {
         when (v?.id) {
@@ -18,7 +26,7 @@
 } 
 ```
 
-get result from  **getLocationFromResult(requestCode, resultCode, data)**
+Get result from  **getLocationFromResult(requestCode, resultCode, data)**
 ```kotlin
 override fun onActivityResult(
         requestCode: Int,
@@ -37,7 +45,7 @@ override fun onActivityResult(
 
 ### Google Place Picker (AutoComplete text View)
 
-Initialize **GooglePlackPickerManager**
+Initialize **googlePlackPickerManager**
 ```kotlin
     val googlePlacePickerManager = GooglePlacePickerManager(context)
     
@@ -51,7 +59,7 @@ Initialize **GooglePlackPickerManager**
             })
     }
 ```
-***Get Address from LatLng**
+**Get Address from LatLng**
 
 ```kotlin
     val googlePlacePickerManager = GooglePlacePickerManager(context)
