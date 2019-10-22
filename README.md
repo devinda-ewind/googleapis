@@ -1,11 +1,51 @@
+[![](https://jitpack.io/v/devinda-ewind/googleapis.svg)](https://jitpack.io/#devinda-ewind/googleapis)
+
 # Google APIs
 
-## Features
+Features
+------
   - Google Place Picker Activity
   - Google Map
   - Google Location
   - Google Place Picker (AutoComplete text View)
-### Google Place Activity(Extension)
+-------
+Download
+-------
+Use Gradle:
+**Step 1.**  Add it in your root build.gradle at the end of repositories:
+```gradle
+allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
+**Step 2.** Add the dependency
+```gradle
+dependencies {
+	        implementation 'com.github.devinda-ewind:googleapis:version'
+	}
+```
+
+Or Maven:
+
+```xml
+<repositories>
+	<repository>
+		   <id>jitpack.io</id>
+		   <url>https://jitpack.io</url>
+	</repository>
+</repositories>
+<dependency>
+	    <groupId>com.github.devinda-ewind</groupId>
+	    <artifactId>googleapis</artifactId>
+	    <version>Tag</version>
+</dependency>
+```
+
+Google Place Activity(Extension)
+-------
 **initialize places api in application**
 ```kotlin
 class App : Application() {
@@ -42,9 +82,9 @@ override fun onActivityResult(
             }
     }
 ```
-
-### Google Place Picker (AutoComplete text View)
-
+------
+Google Place Picker (AutoComplete text View)
+---------
 Initialize **googlePlackPickerManager**
 ```kotlin
     val googlePlacePickerManager = GooglePlacePickerManager(context)
