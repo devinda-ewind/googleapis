@@ -50,6 +50,7 @@ class GoogleMapManager : OnMapReadyCallback {
 
     override fun onMapReady(googleMap: GoogleMap) {
         this.mGoogleMap = googleMap
+        mGoogleMap.mapType = GoogleMap.MAP_TYPE_SATELLITE
         setCamera(LatLng(-37.8136, 144.9631), DEFAULT_ZOOM)
         mGoogleMap.uiSettings.isMyLocationButtonEnabled = false
         setMapClick(addMarker)

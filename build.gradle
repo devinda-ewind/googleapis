@@ -1,8 +1,40 @@
-apply from: "$rootDir/common-android-library.gradle"
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion Versions.compileSdk
+
+    defaultConfig {
+        minSdkVersion Versions.minSdk
+        targetSdkVersion Versions.targetSdk
+        versionCode Releases.versionCode
+        versionName Releases.versionName
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+        }
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+    }
+}
+
+repositories {
+    google()
+}
 
 dependencies {
-    implementation AndroidX.appcompat
-    implementation GoogleLibraries.maps
-    implementation GoogleLibraries.place
-    implementation GoogleLibraries.location
+    implementation Kotlin.stdlib
+}
+
+
+dependencies {
+    implementation Androidx.appcompat
+    implementation Googlelibraries.maps
+    implementation Googlelibraries.location
 }
